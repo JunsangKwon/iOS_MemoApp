@@ -20,7 +20,7 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        
+        // 내용을 입력하지 않은경우 경고
         guard self.contentsTextView.text?.isEmpty == false else {
             let alert = UIAlertController(title: nil, message: "내용을 입력해주세요", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -31,9 +31,9 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         // MemoData 객체를 생성하고 데이터를 담음
         let data = MemoData()
         
-        data.title = self.subject                       // 제목
-        data.contents = self.contentsTextView.text    // 내용
-        data.image = self.previewImage.image      // 이미지
+        data.title = self.subject                    // 제목
+        data.contents = self.contentsTextView.text   // 내용
+        data.image = self.previewImage.image         // 이미지
         data.regdate = Date()                        // 작성 시각
         
         // 앱 델리개이트 객체를 읽어온 다음 memolist 배열에 MemoData 객체를 추가

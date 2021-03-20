@@ -8,6 +8,12 @@
 import UIKit
 
 class MemoCell: UITableViewCell {
+    
+    @IBOutlet weak var subjectLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var regdateLabel: UILabel!
+    @IBOutlet weak var memoImg: UIImageView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
